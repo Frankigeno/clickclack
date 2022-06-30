@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <link rel="shortcut icon" href="icon.ico" type="image/x-icon">
+    <title>Click Clack</title>
+</head>
+<body>
+    <div class="main">
+        <div id="cli-cla" class="elements"><span id="click">Click</span> <span id="clack">Clack</span></div>
+        <span class="elements" id="count" style="opacity: 0.4;">Counter: 0</span>
+        <button class="elements" id="btn">Tap this</button>
+    </div>
+    <span style="opacity: 0.2;">Created by Levorin</span>
+</body>
+<script>
+    const button = document.getElementById("btn");
+    const clickTag = document.getElementById("click");
+    const clackTag = document.getElementById("clack");
+    const countText = document.getElementById("count");
+
+    let isClick = true;
+    let counter = localStorage.getItem("counter");
+    countText.innerText = "Counter: " + counter;
+
+    clackTag.style.opacity = 0.3;
+
+    function countCount(event)
+    {
+        isClick = !isClick;
+
+        counter++;
+        countText.innerText = "Counter: " + counter;
+
+        localStorage.setItem("counter", counter);
+
+        if (isClick)
+        {
+            clackTag.style.opacity = 0.3;
+            clickTag.style.opacity = 1;
+        }
+        else
+        {
+            clackTag.style.opacity = 1;
+            clickTag.style.opacity = 0.3;
+        }
+    }
+
+    button.addEventListener("click", countCount);
+
+    countText.addEventListener("click", (event) => {
+        counter = 0;
+        localStorage.setItem("counter", 0);
+        countText.innerText = "Counter: " + counter;
+    })
+
+</script>
+</html>

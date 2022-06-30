@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@300&display=swap');
+
+body
+{
+    margin: 0;
+    font-family: 'Mulish', sans-serif;
+    background-color: #e8e8e8;
+}
+
+.main
+{
+    max-width: 400px;
+    width: calc(100% - 5px);
+    height: 400px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    top: 50px;
+    position: absolute;
+    background-color: white;
+    border: 2px solid black;
+}
+
+.elements
+{
+    display: block;
+    padding: 30px;
+}
+
+button
+{
+    width: 200px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 1px;
+    background: none;
+    border: 2px solid black;
+    font-size: 17px;
+    cursor: pointer;
+    box-shadow: 0 9px rgb(68, 68, 68);
+    border-radius: 10px;
+    transition: 0.2s;
+    outline: none;
+}
+
+button:hover
+{
+    background-color: black;
+    color: white;
+}
+
+button:active {
+    box-shadow: 0 5px rgb(68, 68, 68);
+    transform: translate(-50%, 4px);
+}
+
+#cli-cla
+{
+    font-size: 50px;
+    transition: 0.4s;
+}
+
+#count
+{
+    cursor: pointer;
+}
+
+#count:hover { text-decoration: underline; }
