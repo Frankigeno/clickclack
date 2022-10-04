@@ -24,6 +24,9 @@
 
     let isClick = true;
     let counter = localStorage.getItem("counter");
+    if (counter == null){
+        counter = 0;
+    }
     countText.innerText = "Counter: " + counter;
 
     clackTag.style.opacity = 0.3;
